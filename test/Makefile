@@ -12,4 +12,4 @@ libSDL_FontCache.so: SDL_FontCache.o
 SDL_FontCache.o:
 	gcc -c -Wall -Werror -fpic ../SDL_FontCache.c `sdl2-config --cflags --libs`
 clean:
-	rm main
+	rm main SDL_FontCache.o libSDL_FontCache.so
