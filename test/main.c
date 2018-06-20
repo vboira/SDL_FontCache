@@ -98,13 +98,13 @@ void loop_drawSomeText()
     //FC_SetLoadingString(font, FC_GetStringASCII_Latin1());
     
     #ifdef SDL_GPU_VERSION_MAJOR
-    FC_LoadFont(font, "fonts/FreeSans.ttf", 20, FC_MakeColor(0,0,0,255), TTF_STYLE_NORMAL);
-    FC_LoadFont(font2, "fonts/FreeSans.ttf", 18, FC_MakeColor(0,200,0,255), TTF_STYLE_NORMAL);
-    FC_LoadFont(font3, "fonts/FreeSans.ttf", 22, FC_MakeColor(0,0,200,255), TTF_STYLE_NORMAL);
+    FC_LoadFont(font, "fonts/Georgia.ttf", 20, FC_MakeColor(0,0,0,255), TTF_STYLE_NORMAL);
+    FC_LoadFont(font2, "fonts/Georgia.ttf", 18, FC_MakeColor(0,200,0,255), TTF_STYLE_NORMAL);
+    FC_LoadFont(font3, "fonts/Georgia.ttf", 22, FC_MakeColor(0,0,200,255), TTF_STYLE_NORMAL);
     #else
-    FC_LoadFont(font, renderer, "fonts/FreeSans.ttf", 20, FC_MakeColor(0,0,0,255), TTF_STYLE_NORMAL);
-    FC_LoadFont(font2, renderer, "fonts/FreeSans.ttf", 18, FC_MakeColor(0,200,0,255), TTF_STYLE_NORMAL);
-    FC_LoadFont(font3, renderer, "fonts/FreeSans.ttf", 22, FC_MakeColor(0,0,200,255), TTF_STYLE_NORMAL);
+    FC_LoadFont(font, renderer, "fonts/Georgia.ttf", 20, FC_MakeColor(0,0,0,255), TTF_STYLE_NORMAL);
+    FC_LoadFont(font2, renderer, "fonts/Georgia.ttf", 18, FC_MakeColor(0,200,0,255), TTF_STYLE_NORMAL);
+    FC_LoadFont(font3, renderer, "fonts/Georgia.ttf", 22, FC_MakeColor(0,0,200,255), TTF_STYLE_NORMAL);
     #endif
     char* utf8_string = get_string_from_file("utf8_sample.txt");
     char input_text[2048];
@@ -237,7 +237,7 @@ void loop_drawSomeText()
             if(SDL_GetTicks()%1000 < 500)
                 fill_rect(FC_MakeRect(input_rect.x + input_cursor_pos.x, input_rect.y + input_cursor_pos.y, input_cursor_pos.w, input_cursor_pos.h), FC_MakeColor(0, 0, 0, 255));
             
-            FC_DrawColumn(font, target, 0, 50, 200, "column align LEFT\nColumn text wraps at the width of the column and has no maximum height.");
+            FC_DrawColumn(font, target, 0, 50, 200, "column123456789 align LEFT\nColumn text wraps at the width of the column and has no maximum height.");
             FC_DrawColumnAlign(font, target, 100, 250, 200, FC_ALIGN_CENTER, "column align CENTER\nColumn text wraps at the width of the column and has no maximum height.");
             FC_DrawColumnAlign(font, target, 200, 450, 200, FC_ALIGN_RIGHT, "column align RIGHT\nColumn text wraps at the width of the column and has no maximum height.");
             
